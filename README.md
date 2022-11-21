@@ -1,4 +1,5 @@
 # employee-attrition
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://employee-attrition.streamlit.app/)
 
 ## Summary
 If you’re wondering why do employees tend to leave organizations, you’ll mostly get answers related to “low paycheck”, but is that really the case? 
