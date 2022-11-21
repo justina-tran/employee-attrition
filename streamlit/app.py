@@ -8,25 +8,25 @@ import os
 st.set_page_config(layout="wide")
 st.title('Employee Attrition Analysis')
 
-st.text("""If you’re wondering why employees tend to leave organizations, you’ll mostly get answers related to “low paycheck“ but is that really the case? 
+st.markdown("""If you’re wondering why employees tend to leave organizations, you’ll mostly get answers related to “low paycheck“ but is that really the case? 
 By using a dataset created by IBM data scientists, you’ll understand the real reasons of why employees leave the org! 
 The data consists of nearly 1,500 current and former employees with information related to their monthly income, work life balance, experience, job role etc., 
 with about 18% of the dataset covering attrition cases, of which half is coming from employees in R&D followed by sales.""")
 
 
-st.text(""" Based on the visualizations, we noticed that employees early in their career tend to leave the company after less than 4 years. 
+st.markdown("""Based on the visualizations, we noticed that employees early in their career tend to leave the company after less than 4 years. 
 Employees with experience ≤4 years have a 32% attrition rate compared to people with more experience. 
-By analyzing the age factor we’ve also found that younger aged employees are more likely to leave the organization than older people, 
+By analyzing the age factor, we’ve also found that younger aged employees are more likely to leave the organization than older people, 
 ages between 25 & 35 with 47% attrition rate, indicates that older people choose to stay.""")
 
 
 
-uploaded_file = st.file_uploader("Choose a file")
-if uploaded_file is not None:
-  df = pd.read_csv(uploaded_file)
-  st.write(df)
+# uploaded_file = st.file_uploader("Choose a file")
+# if uploaded_file is not None:
+#   df = pd.read_csv(uploaded_file)
+#   st.write(df)
 
-#Dataset = pd.read_csv("HREmployeeAttrition.csv")
+df = pd.read_csv("HREmployeeAttrition.csv")
 
 fig = px.histogram(df, x="JobRole", height= 500, text_auto='.2s', color = 'Department', color_discrete_sequence=px.colors.qualitative.Set2,
   title = 'Count distributions of the Job Roles and Departments')
